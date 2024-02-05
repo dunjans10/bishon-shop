@@ -5,12 +5,23 @@ const cart = document.querySelector('.cart');
 const closeCart = document.querySelector('#cart-close');
 
 cartIcon.addEventListener('click', () => {
-  cart.classList.add('active')
+  cart.classList.add('active');
+  document.body.addEventListener('click', handleBodyClick);
 })
 
 closeCart.addEventListener('click', () => {
-  cart.classList.remove('active')
+  cart.classList.remove('active');
+  document.body.removeEventListener('click', handleBodyClick);
 })
+
+function handleBodyClick(event) {
+
+  if (!cart.contains(event.target) && event.target !== cartIcon) {
+    cart.classList.remove('active');
+
+    document.body.removeEventListener('click', handleBodyClick);
+  }
+}
 
 
 /* Start when document is ready */
@@ -65,6 +76,7 @@ function addEvents(){
 }
 
 let itemsAdded = [];
+let cartCountElement = document.getElementById('cart-count'); // Get the cart count element
 
 function handle_addCartItem(){
   let product = this.parentElement;
@@ -95,23 +107,38 @@ function handle_addCartItem(){
   const cartContent = cart.querySelector('.cart-content');
   cartContent.appendChild(newNode);
 
+  updateCartCount();
+
+  cart.classList.add('active');
   update();
 }
 
 function handle_removeCartItem(){
   this.parentElement.remove();
   itemsAdded = itemsAdded.filter(el => el.title != this.parentElement.querySelector('.cart-product-title').innerHTML);
+  updateCartCount();
   update();
 }
 
-function handle_changeItemQuantity(){
-  if(isNaN(this.value) || this.value < 1){
+function handle_changeItemQuantity() {
+  if (isNaN(this.value) || this.value < 1) {
     this.value = 1;
   }
   this.value = Math.floor(this.value);
 
+
+  const title = this.parentElement.querySelector('.cart-product-title').innerHTML;
+  const selectedItem = itemsAdded.find((item) => item.title === title);
+
+  if (selectedItem) {
+    selectedItem.quantity = parseInt(this.value);
+  }
+
+
+  updateCartCount();
   update();
 }
+
 
 function handle_buyOrder(){
   if(itemsAdded.length <= 0){
@@ -123,9 +150,17 @@ function handle_buyOrder(){
   alert('Your order is placed successfully!');
 
   itemsAdded = [];
-
+  updateCartCount();
   update();
 }
+
+function updateCartCount() {
+  const cartCountElement = document.getElementById('cart-count');
+  if (cartCountElement) {
+    cartCountElement.textContent = itemsAdded.reduce((total, item) => total + parseInt(item.quantity || 1), 0);
+  }
+}
+
 
 function updateTotal(){
   let cartBoxes = document.querySelectorAll('.cart-box');

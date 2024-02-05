@@ -67,10 +67,23 @@ header{
 }
 
 #cart-icon{
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   cursor: pointer;
 }
 
+.cart-icon_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 /* CART */
 
 .cart{
