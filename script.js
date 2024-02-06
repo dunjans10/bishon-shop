@@ -221,12 +221,19 @@ function hideSuccessModal() {
   const successModal = document.getElementById('successModal');
   successModal.style.display = 'none';
 }
-
+function hideAlertSecDialog() {
+  const alertModalSec = document.getElementById('alertSecModal');
+  alertModalSec.style.display = 'none';
+}
 
 function handle_buyOrder() {
   if (itemsAdded.length <= 0) {
-    alert('There is no order to place yet! \nPlease make an order first.');
-    return;
+
+  const alertModalSec = document.getElementById('alertSecModal');
+  alertModalSec.style.display = 'block';
+  setTimeout(hideAlertSecDialog, 3000);
+
+  return;
   }
 
   const cartContent = cart.querySelector('.cart-content');
@@ -358,3 +365,23 @@ const copyrightStatement = `© ${currentYear} Bishon Store. All rights reserved.
 
 document.getElementById('copyright').textContent = copyrightStatement;
 
+/* Modal extern */
+
+var modal = document.getElementById("externModal");
+
+
+var closeBtn = document.getElementsByClassName("close")[0];
+
+window.onload = function() {
+    modal.style.display = "block";
+};
+
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+};
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
