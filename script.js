@@ -312,3 +312,39 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+
+/* SWIPER -reviews */
+
+const swiperReviews = new Swiper('.swiper-rev', {
+  loop: true,
+  slidesPerView: 1,
+  slidesPerGroup:1,
+  spaceBetween: 10,
+    autoplay: {
+   delay: 5000,
+  },
+   breakpoints: {
+   	750:{
+      	slidesPerView: 3,
+  		slidesPerGroup:3,
+  		spaceBetween: 24,
+       autoplay: {
+   delay: 5000,
+  },
+    },
+   },
+  autoplay: {
+   delay: 5000,
+  },
+ 
+  pagination: {
+    el: '.rev-dots',
+    clickable: true,
+  },
+
+ 
+  navigation: {
+    nextEl: '.rev-next',
+    prevEl: '.rev-prev',
+  },
+});
