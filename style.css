@@ -845,7 +845,11 @@ p.rev-txt {
   width: 200px;
 }
 }
-
+@media (max-width: 600px) {
+  h3.rev-title {
+    font-size: 12px;
+  }
+}
 
 .verified-purchase h4 {
   color: var(--sec-color);
