@@ -349,3 +349,12 @@ const swiperReviews = new Swiper('.swiper-rev', {
   },
 });
 
+/* Footer */
+
+
+const currentYear = new Date().getFullYear();
+
+const copyrightStatement = `© ${currentYear} Bishon Store. All rights reserved.`;
+
+document.getElementById('copyright').textContent = copyrightStatement;
+
