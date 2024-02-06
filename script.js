@@ -10,6 +10,27 @@ for(let i=0; i<marqueeElementsDisplayed; i++) {
   marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
 } 
 
+//Switch tab
+
+function openTab(tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+
+  // Remove "active" class from all tab buttons
+  tablinks = document.getElementsByClassName("tab-button");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("active");
+  }
+
+  // Add "active" class to the clicked tab button
+  document.querySelector('button[onclick="openTab(\'' + tabName + '\')"]').classList.add("active");
+}
+
+
 
 /* Open and close cart */
 

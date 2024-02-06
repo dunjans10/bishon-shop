@@ -274,7 +274,71 @@ display: flex;
 }
 }
 
+/* SWITCH TAB- welcome */
 
+.welcome{
+  padding: 3rem 0 2rem;
+}
+
+h2.wecome_title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.tab-container {
+  border: 1px solid var(--main-color);
+  text-align: center;
+  padding: 3rem;
+}
+.tab-button {
+  background-color: var(--bg-color);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: var(--sec-color);
+  font-size: 18px;
+  font-weight: 600;
+}
+.tab-button.active {
+  background-color: var(--sec-color);
+  color: var(--bg-color);
+}
+.tab-content {
+  display: none;
+  margin-top: 1rem;
+  color: var(--sec-color);
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@media (max-width:1080px){
+  .tab-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tab-button{
+  font-size: 16px;
+}
+}
+
+@media (max-width:860px){
+  
+
+.tab-button{
+  font-size: 14px;
+}
+}
+@media (max-width:780px){
+.tab-buttons {
+ 
+  flex-direction: column;
+  gap: 20px;
+}
+}
 /* CART */
 .shop {
   padding: 4rem 0 3rem;
