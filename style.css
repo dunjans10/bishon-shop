@@ -71,6 +71,12 @@ button.shop_btn:hover,
 button.shop_btn:hover a {
   color: var(--bg-color);
 }
+
+@media only screen and (max-width: 600px) {
+  .shop_btn {
+      color: var(--sec-color);
+  }
+}
 /* MODAL - Extern */
 .externModal {
   display: none;
