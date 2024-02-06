@@ -348,3 +348,4 @@ const swiperReviews = new Swiper('.swiper-rev', {
     prevEl: '.rev-prev',
   },
 });
+
