@@ -914,15 +914,7 @@ right: 0;
  left: 0;
 }
 
-@media (max-width: 750px) {
-  .rev-next{
-    right: 20%;
-    }
-    
-    .rev-prev{
-     left: 20%;
-    }
-}
+
 
 /* About */
 
