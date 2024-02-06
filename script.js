@@ -20,13 +20,11 @@ function openTab(tabName) {
   }
   document.getElementById(tabName).style.display = "block";
 
-  // Remove "active" class from all tab buttons
+
   tablinks = document.getElementsByClassName("tab-button");
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].classList.remove("active");
   }
-
-  // Add "active" class to the clicked tab button
   document.querySelector('button[onclick="openTab(\'' + tabName + '\')"]').classList.add("active");
 }
 
@@ -285,4 +283,32 @@ function CartBoxComponent(title, price, imgSrc){
           <i class='bx bxs-trash-alt cart-remove'></i>
         </div>`
 }
+
+
+/* FAQ */
+
+document.addEventListener("DOMContentLoaded", function() {
+  const questions = document.querySelectorAll(".question");
+
+  questions.forEach(function(question, index) {
+      const answer = question.querySelector(".answer");
+      const plusIcon = question.querySelector(".plus_icon");
+      const minusIcon = question.querySelector(".minus_icon");
+
+      
+      if (index === 0) {
+          answer.classList.add("show");
+          plusIcon.style.display = "none";
+          minusIcon.style.display = "block";
+      }
+
+      question.addEventListener("click", function() {
+        
+          answer.classList.toggle("show");
+      
+          plusIcon.style.display = answer.classList.contains("show") ? "none" : "block";
+          minusIcon.style.display = answer.classList.contains("show") ? "block" : "none";
+      });
+  });
+});
 
