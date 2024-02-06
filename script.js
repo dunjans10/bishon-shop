@@ -385,3 +385,8 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 };
+
+function scrollToShop() {
+  var shopSection = document.getElementById('shop');
+  shopSection.scrollIntoView({ behavior: 'smooth' });
+}

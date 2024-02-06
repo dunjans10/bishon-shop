@@ -25,9 +25,12 @@
   --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
   }
 
+  html{
+    scroll-behavior: smooth;
+  }
+
 body{
   color: var(--text-color);
-  scroll-behavior: smooth;
   user-select: none;
   overflow-x: hidden;
 }
@@ -46,17 +49,27 @@ button.shop_btn {
   padding: 10px 25px;
   margin-top: 1rem;
   border-radius: 4px;
-  columns: var(--sec-color);
+  color: var(--sec-color);
   cursor: pointer;
 }
 
 button.shop_btn.above_btn {
   border: 1px solid var(--sec-color);
 }
+
+button.shop_btn a{
+  color: var(--sec-color);
+}
+
+
 button.shop_btn:hover{
   background-color: var(--sec-color);
   color: var(--bg-color);
 
+}
+button.shop_btn:hover,
+button.shop_btn:hover a {
+  color: var(--bg-color);
 }
 /* MODAL - Extern */
 .externModal {

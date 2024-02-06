@@ -85,7 +85,8 @@
           </svg>
         <h1>Bishon Store: Your Gateway to Pup-Perfection</h1>
         <p class="hero_description">Explore a world of tail-wagging wonders at Bishon Store, where pampering your furry friend is a delight. From chic accessories to premium treats, we've got everything your pup needs to strut in style.</p>
-        <button type="button" class="shop_btn">Shop Now</button>
+        <button type="button" class="shop_btn" onclick="scrollToShop()">
+          <a href="#shop">Shop Now</a></button>
       </div>
     </div>
   </section>
@@ -120,7 +121,7 @@
   </section>
   
 
-  <section class="shop container">
+  <section class="shop container" id="shop">
     <h2 class="section-title">Shop Products</h2>
 
     <div class="shop-content">
@@ -587,8 +588,16 @@
         
       </div>
       <div class="rev-pagination">
-      <i class='bx bx-left-arrow-circle rev-prev' ></i>
-      <i class='bx bx-right-arrow-circle rev-next'></i>
+        <svg class="rev-prev" width="42" height="43" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="21" cy="21.2126" rx="21" ry="21" transform="rotate(-180 21 21.2126)" fill="white"/>
+          <path d="M24 28.2126L17 21.2126L24 14.2126" stroke="#161412" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg> 
+        <svg class="rev-next" width="42" height="43" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="21" cy="21.2126" rx="21" ry="21" fill="white"/>
+          <path d="M18 14.2126L25 21.2126L18 28.2126" stroke="#161412" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg> 
+  
+    
     </div>
       <!-- If we need pagination -->
       <div class="rev-dots"></div>
@@ -603,7 +612,7 @@
       <div>
         <h3 class="about_title">Discover More at Bishon Store</h3>
         <p class="about_description">In our ever-expanding world of possibilities, Bishon Store invites you to explore beyond the ordinary. Step into a realm where innovation meets elegance, where every product tells a story of quality craftsmanship and timeless style. Whether you're searching for the perfect gift, upgrading your everyday essentials, or seeking inspiration for your next adventure, our curated collection awaits. Experience the fusion of sophistication and convenience as you delve into our diverse range of offerings, meticulously selected to elevate your lifestyle. At Bishon Store, we're not just a destination; we're a gateway to a world of discovery.</p>
-        <button type="button" class="shop_btn above_btn">Shop Now</button>
+        <button type="button" class="shop_btn above_btn" onclick="scrollToShop()"><a href="#shop">Shop Now</a></button>
       </div>
     </div>
   </section>
